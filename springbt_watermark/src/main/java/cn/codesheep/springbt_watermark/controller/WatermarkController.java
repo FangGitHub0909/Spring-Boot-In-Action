@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 
+
 @RestController
 public class WatermarkController {
 
@@ -18,6 +19,12 @@ public class WatermarkController {
     @Autowired
     private WatermarkService watermarkService;
 
+    /**
+     * MultipartFile  这个类一般是用来接受前台传过来的文件，做个导入功能。
+     * getOriginalFilename（）方法是得到原来的文件名在客户机的文件系统名称
+     * @param image
+     * @return
+     */
     @RequestMapping(value = "/watermarktest", method = RequestMethod.POST)
     public ImageInfo watermarkTest( @RequestParam("file") MultipartFile image ) {
 
@@ -33,6 +40,7 @@ public class WatermarkController {
 
         imgInfo.setImageUrl(imageURL);
         imgInfo.setLogoImageUrl(watermarkAddImageURL);
+        System.out.println("完成");
         return imgInfo;
     }
 }

@@ -3,7 +3,9 @@ package cn.codesheep.springbt_watermark.comm;
 import org.springframework.stereotype.Component;
 
 import java.awt.*;
-
+/**
+ * 水印设置
+ */
 @Component
 public class Const {
 

@@ -19,14 +19,17 @@ public class ImgWatermarkServiceImpl implements WatermarkService {
 
     @Override
     public String watermarkAdd( File imageFile, String imageFileName, String uploadPath, String realUploadPath ) {
-
+        //加水印后的文件名
         String logoFileName = "watermark_" + imageFileName;
+        //字节输出流
         OutputStream os = null;
 
         try {
+            //图片加载到内存
             Image image = ImageIO.read(imageFile);
-
+            //获得图片的宽度
             int width = image.getWidth(null);
+            //获得图片的高度
             int height = image.getHeight(null);
 
             BufferedImage bufferedImage = new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);  // 创建图片缓存对象

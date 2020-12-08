@@ -38,12 +38,12 @@ import com.baidu.fsg.uid.utils.PaddedAtomicLong;
 public class BufferPaddingExecutor {
     private static final Logger LOGGER = LoggerFactory.getLogger(RingBuffer.class);
 
-    /** Constants */
+    /** 常量 */
     private static final String WORKER_NAME = "RingBuffer-Padding-Worker";
     private static final String SCHEDULE_NAME = "RingBuffer-Padding-Schedule";
     private static final long DEFAULT_SCHEDULE_INTERVAL = 5 * 60L; // 5 minutes
     
-    /** Whether buffer padding is running */
+    /** 缓存状态 */
     private final AtomicBoolean running;
 
     /** We can borrow UIDs from the future, here store the last second we have consumed */
